@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", sans-serif;
+  --color-cream: #fdfbf7;
+  --color-charcoal: #1a1a1a;
+  --color-charcoal-deep: #101817;
+  --color-muted: #6f746f;
+  --color-teal: #00a896;
+  --color-teal-light: #36d1c0;
+  --color-teal-dark: #142f2c;
+  --color-gold: #b99a5b;
+  --color-whatsapp: #25d366;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-cream);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  position: relative;
+  padding-block: 1.75rem;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: color 180ms ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 1.25rem;
+  width: 0;
+  height: 2px;
+  border-radius: 1rem;
+  background: var(--color-teal);
+  content: "";
+  transition: width 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-charcoal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(0, 168, 150, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 168, 150, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.contact-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-auto-rows: 260px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: #e7e4dc;
+}
+
+.gallery-item.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.video-card {
+  grid-row: span 4;
+}
+
+@media (min-width: 1024px) {
+  .video-card {
+    grid-row: span 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery-grid {
+    grid-auto-rows: 210px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-item.featured {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

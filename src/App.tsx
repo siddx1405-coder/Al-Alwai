@@ -2,6 +2,7 @@ import { useRef, useState, type ReactNode } from "react";
 
 const phone = "+97450176768";
 const whatsapp = "97450176768";
+const mediaUrl = (path: string) => `${import.meta.env.BASE_URL}media/${path}`;
 
 type IconName =
   | "arrow"
@@ -100,15 +101,15 @@ const services: { title: string; description: string; icon: IconName; number: st
 ];
 
 const photos = [
-  ["/media/project-01.png", "مقر العاوي للوساطة العقارية"],
-  ["/media/project-02.jpg", "صيانة وتمديدات كهربائية"],
-  ["/media/project-03.jpg", "أعمال كهرباء داخلية"],
-  ["/media/project-04.jpg", "أعمال الحدادة وتركيب الهياكل"],
-  ["/media/project-05.jpg", "تجهيز وترميم الأسطح"],
-  ["/media/project-06.jpg", "نماذج البلاط والتشطيبات"],
-  ["/media/project-07.jpg", "خيارات البلاط الحديثة"],
-  ["/media/project-08.jpg", "تنفيذ العزل المائي للأسطح"],
-  ["/media/project-09.jpg", "تركيب وصيانة مضخات المياه"],
+  [mediaUrl("project-01.png"), "مقر العاوي للوساطة العقارية"],
+  [mediaUrl("project-02.jpg"), "صيانة وتمديدات كهربائية"],
+  [mediaUrl("project-03.jpg"), "أعمال كهرباء داخلية"],
+  [mediaUrl("project-04.jpg"), "أعمال الحدادة وتركيب الهياكل"],
+  [mediaUrl("project-05.jpg"), "تجهيز وترميم الأسطح"],
+  [mediaUrl("project-06.jpg"), "نماذج البلاط والتشطيبات"],
+  [mediaUrl("project-07.jpg"), "خيارات البلاط الحديثة"],
+  [mediaUrl("project-08.jpg"), "تنفيذ العزل المائي للأسطح"],
+  [mediaUrl("project-09.jpg"), "تركيب وصيانة مضخات المياه"],
 ];
 
 function Logo({ light = false }: { light?: boolean }) {
@@ -321,7 +322,7 @@ export default function App() {
                       controls
                       playsInline
                       preload="metadata"
-                      poster="/media/project-04.jpg"
+                      poster={mediaUrl("project-04.jpg")}
                       aria-label="فيديو تنفيذ أعمال الحدادة والهياكل المعدنية"
                       onPlay={() => {
                         setVideoPlaying(true);
@@ -331,7 +332,7 @@ export default function App() {
                       onEnded={() => setVideoPlaying(false)}
                       onError={() => setVideoError(true)}
                     >
-                      <source src="/media/project-video.mp4" type="video/mp4" />
+                      <source src={mediaUrl("project-video.mp4")} type="video/mp4" />
                       متصفحك لا يدعم تشغيل الفيديو.
                     </video>
                     {!videoPlaying && !videoError && (
@@ -353,7 +354,7 @@ export default function App() {
                         <span className="mt-2 text-sm leading-6 text-white/55">يمكنك فتح الفيديو مباشرة في نافذة مستقلة.</span>
                         <a
                           className="mt-5 flex items-center gap-2 rounded-xl bg-teal px-5 py-3 text-sm font-bold text-white"
-                          href="/media/project-video.mp4"
+                          href={mediaUrl("project-video.mp4")}
                           target="_blank"
                           rel="noreferrer"
                         >

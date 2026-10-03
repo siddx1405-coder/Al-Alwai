@@ -138,6 +138,9 @@
 # ---------------------------------------------------------------------------
 *.dwg                filter=lfs diff=lfs merge=lfs -text
 *.dxf                filter=lfs diff=lfs merge=lfs -text
+
+# Serve site media directly from Vercel's static output instead of LFS pointers.
+public/media/**       -filter -diff -merge -text
 *.step               filter=lfs diff=lfs merge=lfs -text
 *.stp                filter=lfs diff=lfs merge=lfs -text
 *.iges               filter=lfs diff=lfs merge=lfs -text

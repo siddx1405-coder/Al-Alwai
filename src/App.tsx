@@ -196,6 +196,12 @@ export default function App() {
         <section id="home" className="relative min-h-[850px] pt-20 lg:min-h-screen">
           <div className="absolute inset-0 grid-pattern opacity-50" />
           <div className="absolute -right-40 top-28 size-96 rounded-full bg-teal/10 blur-3xl" />
+          <div className="relative mx-auto flex max-w-7xl justify-center px-5 pt-8 lg:px-8">
+            <div className="inline-flex items-center gap-3 rounded-full border border-teal/15 bg-white/80 px-5 py-3 text-center shadow-sm backdrop-blur">
+              <span className="text-sm font-bold text-charcoal/70">سجل تجاري رقم</span>
+              <span className="text-lg font-black text-teal" dir="ltr">13278</span>
+            </div>
+          </div>
           <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-24">
             <div className="relative z-10">
               <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-teal/15 bg-white/70 px-4 py-2 text-sm font-bold text-teal shadow-sm">
@@ -251,12 +257,6 @@ export default function App() {
               </div>
               <div className="absolute left-[-2%] top-[42%] grid size-20 place-items-center rounded-full border-[10px] border-cream bg-gold text-white shadow-xl">
                 <Icon name="check" className="size-7" />
-              </div>
-            </div>
-            <div className="flex justify-center lg:col-span-2">
-              <div className="inline-flex items-center gap-3 rounded-full border border-teal/15 bg-white/80 px-5 py-3 text-center shadow-sm backdrop-blur">
-                <span className="text-sm font-bold text-charcoal/70">سجل تجاري رقم</span>
-                <span className="text-lg font-black text-teal" dir="ltr">13278</span>
               </div>
             </div>
           </div>

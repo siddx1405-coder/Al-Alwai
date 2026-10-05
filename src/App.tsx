@@ -167,10 +167,6 @@ export default function App() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-charcoal/5 bg-cream/90 backdrop-blur-xl">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-5 lg:px-8">
           <Logo />
-          <div className="hidden items-center gap-2 rounded-full border border-teal/15 bg-teal/5 px-3 py-2 text-center xl:flex">
-            <span className="text-[11px] font-bold text-charcoal/80">سجل تجاري رقم</span>
-            <span className="text-[12px] font-black text-teal" dir="ltr">13278</span>
-          </div>
           <nav className="hidden items-center gap-8 lg:flex" aria-label="التنقل الرئيسي">
             {[
               ["الرئيسية", "#home"],
@@ -255,6 +251,12 @@ export default function App() {
               </div>
               <div className="absolute left-[-2%] top-[42%] grid size-20 place-items-center rounded-full border-[10px] border-cream bg-gold text-white shadow-xl">
                 <Icon name="check" className="size-7" />
+              </div>
+            </div>
+            <div className="flex justify-center lg:col-span-2">
+              <div className="inline-flex items-center gap-3 rounded-full border border-teal/15 bg-white/80 px-5 py-3 text-center shadow-sm backdrop-blur">
+                <span className="text-sm font-bold text-charcoal/70">سجل تجاري رقم</span>
+                <span className="text-lg font-black text-teal" dir="ltr">13278</span>
               </div>
             </div>
           </div>
